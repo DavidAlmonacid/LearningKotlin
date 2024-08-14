@@ -6,7 +6,7 @@ class SongCatalogTest {
 
     @Test
     fun isPopular() {
-        val song = SongCatalog("We Don't Talk About Bruno", "Encanto Cast", 2022, 1_000_000)
+        val song = Song("We Don't Talk About Bruno", "Encanto Cast", 2022, 1_000_000)
         assertTrue(song.isPopular)
     }
 }
