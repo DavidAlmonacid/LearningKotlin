@@ -1,12 +1,14 @@
-//Complete the showProfile() function so that the program prints these lines:
-//
-//Name: Amanda
-//Age: 33
-//Likes to play tennis. Doesn't have a referrer.
-//
-//Name: Atiqah
-//Age: 28
-//Likes to climb. Has a referrer named Amanda, who likes to play tennis.
+/**
+ * Complete the showProfile() function so that the program prints these lines:
+ * - Name: Amanda
+ * - Age: 33
+ * - Likes to play tennis. Doesn't have a referrer.
+ *
+ *
+ * - Name: Atiqah
+ * - Age: 28
+ * - Likes to climb. Has a referrer named Amanda, who likes to play tennis.
+ */
 
 fun main() {
     val amanda = Person("Amanda", 33, "play tennis", null)
@@ -16,7 +18,6 @@ fun main() {
     atiqah.showProfile()
 }
 
-
 class Person(
     private val name: String,
     private val age: Int,
@@ -24,7 +25,6 @@ class Person(
     private val referrer: Person?
 ) {
     fun showProfile() {
-        // Fill in code
         println("Name: $name")
         println("Age: $age")
 
@@ -36,7 +36,7 @@ class Person(
             print("Has a referrer named ${referrer.name}")
 
             if (referrer.hobby != null) {
-                println(", who likes to ${referrer.hobby}.")
+                print(", who likes to ${referrer.hobby}.")
             } else {
                 print(".")
             }
