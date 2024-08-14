@@ -9,7 +9,7 @@
  * Complete the auctionPrice() function so that the program prints these lines:
  * - Item A is sold at 5000.
  * - Item B is sold at 3000.
-*/
+ */
 
 fun main() {
     val winningBid = Bid(5000, "Private Collector")
