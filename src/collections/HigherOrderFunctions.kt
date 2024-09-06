@@ -18,7 +18,17 @@ val cookies = listOf(
 )
 
 fun main() {
+    // Learning .forEach
     cookies.forEach { cookie ->
         println("Menu item: ${cookie.name}")
+    }
+
+    // Learning .map
+    val fullMenu = cookies.map { cookie ->
+        "${cookie.name} - $${cookie.price}"
+    }
+    println("\nFull menu:")
+    fullMenu.forEach {
+        println(it)
     }
 }
