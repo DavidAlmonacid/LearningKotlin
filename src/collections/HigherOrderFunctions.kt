@@ -32,4 +32,23 @@ fun main() {
     val softBakedMenu = cookies.filter { cookie -> cookie.softBaked }
     println("\nSoft Baked Menu:")
     softBakedMenu.forEach { println("${it.name} - $${it.price}") }
+
+    // Learning .groupBy()
+    val groupedMenu = cookies.groupBy { cookie ->
+        if (cookie.softBaked) {
+            "Soft Baked"
+        } else {
+            "Crunchy"
+        }
+    }
+    val softBakedMenu2 = groupedMenu["Soft Baked"] ?: emptyList()
+    val crunchyMenu = groupedMenu["Crunchy"] ?: emptyList()
+    println("\nSoft cookies:")
+    softBakedMenu2.forEach {
+        println("${it.name} - $${it.price}")
+    }
+    println("\nCrunchy cookies:")
+    crunchyMenu.forEach {
+        println("${it.name} - $${it.price}")
+    }
 }
