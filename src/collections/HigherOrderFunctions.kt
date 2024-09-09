@@ -57,4 +57,11 @@ fun main() {
         total + cookie.price
     }
     println("\nTotal price: $${totalPrice}")
+
+    //Learning .sortedBy()
+    val alphabeticalMenu = cookies.sortedBy { it.name }
+    println("\nAlphabetical Menu:")
+    alphabeticalMenu.forEach {
+        println(it.name)
+    }
 }
