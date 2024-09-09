@@ -51,4 +51,10 @@ fun main() {
     crunchyMenu.forEach {
         println("${it.name} - $${it.price}")
     }
+
+    // Learning .fold()
+    val totalPrice = cookies.fold(0.0) { total, cookie ->
+        total + cookie.price
+    }
+    println("\nTotal price: $${totalPrice}")
 }
