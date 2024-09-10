@@ -42,4 +42,7 @@ fun main() {
     myGroupedEventsByDaypart.forEach { (daypart, events) ->
         println("$daypart: ${events.size} events")
     }
+
+    // Printing the last item
+    println("\nLast event of the day: ${myEvents.last().title}")
 }
