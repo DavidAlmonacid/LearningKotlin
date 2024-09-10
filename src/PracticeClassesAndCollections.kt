@@ -13,11 +13,24 @@ enum class Daypart {
 }
 
 fun main() {
-    val myEvent = Event(
-        title = "Study Kotlin",
-        description = "Commit to studying Kotlin at least 15 minutes per day.",
-        daypart = Daypart.EVENING,
-        durationInMinutes = 15,
+    val myEvents = mutableListOf(
+        Event(
+            title = "Study Kotlin",
+            description = "Commit to studying Kotlin at least 15 minutes per day.",
+            daypart = Daypart.EVENING,
+            durationInMinutes = 15,
+        )
     )
-    println(myEvent)
+
+    myEvents.add(
+        Event(
+            title = "Wake up",
+            description = "Time to get up",
+            daypart = Daypart.MORNING,
+            durationInMinutes = 0,
+        )
+    )
+
+    println(myEvents)
+    println(myEvents.size)
 }
