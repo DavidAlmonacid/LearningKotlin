@@ -1,16 +1,4 @@
 /*
-9. Task 4
-Your manager likes how the app is coming along, but decides the user should be able to see a summary of their short events,
-based on the event's duration. For example, "You have 5 short events."
-
-A "short" event is an event that is less than 60 minutes.
-
-Using the events variable code from the previous task's solution, how would you achieve this result?
-
-Note: It might help to solve this problem in multiple steps. How would you filter the events based on their duration?
-Once you filter the desired events, how do you determine the quantity?
-
-Click Next to continue onto our solution.
  */
 
 data class Event(
@@ -42,7 +30,16 @@ fun main() {
     println("\nMy Events: $myEvents")
     println(myEvents.size)
 
+    // Filtering short events
     val myShortEvents = myEvents.filter { event -> event.durationInMinutes < 60 }
     println("\nMy Short Events: $myShortEvents")
     println("You have ${myShortEvents.size} short events.")
+
+    // Grouping events by daypart
+    val myGroupedEventsByDaypart = myEvents.groupBy { event -> event.daypart }
+    println("\nMy Grouped Events By Daypart: $myGroupedEventsByDaypart")
+
+    myGroupedEventsByDaypart.forEach { (daypart, events) ->
+        println("$daypart: ${events.size} events")
+    }
 }
