@@ -1,12 +1,17 @@
-/*
- */
-
 data class Event(
     val title: String,
     val description: String? = null,
     val daypart: Daypart,
     val durationInMinutes: Int,
 )
+
+// Create an extension property for the Event data class
+val Event.durationOfEvent: String
+    get() = if (this.durationInMinutes < 60) {
+        "short"
+    } else {
+        "long"
+    }
 
 enum class Daypart {
     MORNING, AFTERNOON, EVENING
@@ -45,4 +50,7 @@ fun main() {
 
     // Printing the last item
     println("\nLast event of the day: ${myEvents.last().title}")
+
+    // Using the extension property
+    println("\nDuration of first event of the day: ${myEvents[0].durationOfEvent}")
 }
